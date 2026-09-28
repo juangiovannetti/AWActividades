@@ -1,117 +1,135 @@
 
-
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-/*IMPORTAR FUENTE*/
 @font-face {
-  font-family: "LibreBaskerville";
-  src: url(../../recursos/fuentes/LibreBaskerville-Regular.ttf);
+    font-family: "Poppins";
+    src: url(../Fuentes/Poppins-Bold.ttf);
+    font-weight: 700;
 }
 
 
-html,
-body,
-header
-
-/*SELECTOR DE TIPO */ 
-html{
-    font-family: "LibreBaskerville";
+html {
+    font-family: Georgia, serif;
+    line-height: 1.6;
 }
 
-header{
-    background-color: #ffebab;
+body {
+    background-color: #e6e8e9;
+    color: #16303F;
 }
 
-body{
-    background-color: #e6e8e9; 
+h1,
+h2 {
+    font-family: "Poppins", sans-serif;
+    font-weight: 700;
+    line-height: 1.25;
 }
 
-a{
+h1 {
+    font-size: 1.75rem;
+    margin-bottom: 1rem;
+}
+
+h2 {
+    font-size: 1.25rem;
+    margin-top: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+p {
+    margin-bottom: 1rem;
+}
+
+a {
     color: #16303F;
     text-decoration: none;
 }
 
-/*SELECTORES DE CLASE */
-/*ENCABEZADOS PRINCIPALES*/
-.encabezado-principal{
+
+.encabezado-principal {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
     background-color: #ffebab;
-    padding: 5px;
+    padding: 5px 1rem;
 }
 
-/*Imagen del logo*/
-.encabezado-principal a img{
-    width: 400px;
+.encabezado-principal a img {
+    width: 200px;
+    max-width: 100%;
 }
 
-.encabezado-principal .vinculos a{
-    color: #16303F;
+.encabezado-principal nav a {
+    margin-left: 1.5rem;
 }
-.encabezado-principal{
 
-/*CONTENIDOS PRINCIPALES*/
-.contenido-principal{
+.encabezado-principal nav a:hover {
+    text-decoration: underline;
+}
+
+
+.contenido-principal {
     max-width: 760px;
     margin: 2.5rem auto;
     padding: 2.5rem 2rem;
     background-color: #FFFFFF;
     border-radius: 4px;
 }
-.contenido-principal .contenedor-form form{
+
+
+.contenido-principal img {
+    display: block;
+    width: 300px;
+    max-width: 100%;
+    margin: 0 auto 1.5rem;
+    border-radius: 4px;
+}
+
+
+.contenido-principal ul {
+    padding-left: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.contenido-principal ul li {
+    margin-bottom: 0.4rem;
+}
+
+
+.contenido-principal form {
     display: flex;
     flex-direction: column;
 }
-}
-.contenido-principal img{
-    width: 650px;    
-}
 
-.contenido-principal .contenedor-form form{
-    display: flex;
-    flex-direction: column;
-}
-
-/*Selector combinado: las etiquetas dentro del form dentro del contenedor*/
-.contenido-principal .contenedor-form form label{
+.contenido-principal form label {
     margin-top: 1rem;
     margin-bottom: 0.25rem;
     font-weight: 700;
-    color: #16303F;
 }
- 
-/*Selector combinado: los campos dentro del form dentro del contenedor*/
-.contenido-principal .contenedor-form form input,
-.contenido-principal .contenedor-form form select,
-.contenido-principal .contenedor-form form textarea{
+
+.contenido-principal form input,
+.contenido-principal form select,
+.contenido-principal form textarea {
+    width: 100%;
     padding: 0.625rem 0.75rem;
     background-color: #FFFFFF;
     border: 1px solid #C8D0D5;
     border-radius: 4px;
-    width: 100%;
+    font-family: inherit;
+    font-size: 1rem;
 }
- 
-.contenido-principal .contenedor-form form textarea{
+
+.contenido-principal form textarea {
     min-height: 140px;
     resize: vertical;
 }
- 
-/*pseudoclase focus: campo seleccionado*/
-.contenido-principal .contenedor-form form input:focus,
-.contenido-principal .contenedor-form form select:focus,
-.contenido-principal .contenedor-form form textarea:focus{
-    border-color: #C9A227;
+
+.contenido-principal form input:focus,
+.contenido-principal form select:focus,
+.contenido-principal form textarea:focus {
     outline: 2px solid #C9A227;
 }
- 
-.contenido-principal .contenedor-form button{
-    display: block;
+
+.contenido-principal form input[type="submit"] {
     margin-top: 1.5rem;
     padding: 0.75rem 2.25rem;
     background-color: #16303F;
@@ -120,27 +138,25 @@ a{
     text-transform: uppercase;
     letter-spacing: 0.12em;
     border: none;
-    border-radius: 4px;
     cursor: pointer;
 }
- 
-.contenido-principal .contenedor-form button:hover{
+
+.contenido-principal form input[type="submit"]:hover {
     background-color: #0E212C;
     color: #FFFFFF;
 }
- 
-.contenido-principal .contenedor-form{
-    padding: 20px 20%;
-}
 
-/*Mapa*/
-.contenido-principal iframe{
-    width: 100%;
-    height: 350px;
-    border-radius: 4px;
-}
 
-/*PIE PRINCIPAL*/
-.pie-principal{
+.pie-principal {
     background-color: #ffebab;
+    padding: 1rem;
+    text-align: center;
+}
+
+.pie-principal ul {
+    list-style: none;
+}
+
+.pie-principal ul li {
+    margin: 0.25rem 0;
 }
