@@ -1,0 +1,95 @@
+
+
+@font-face {
+    font-family: 'Sora';
+    src: url(../fuentes/Sora-Regular.ttf);
+}
+
+*{
+    box-sizing: border-box;
+}
+
+html{
+    font-family: 'Sora', sans-serif;
+    font-size: 16px;
+}
+
+body{
+    margin: 0;
+}
+
+img{
+    max-width: 100%;
+    height: auto;
+}
+
+.encabezado,
+.pie{
+    background-color: #2f3a2c;
+    color: #ffffff;
+}
+
+.encabezado{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+}
+
+.encabezado__logo img{
+    height: 48px;
+    width: auto;
+}
+
+.encabezado__menu ul{
+    display: flex;
+    gap: 1.5rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.encabezado__menu a{
+    color: inherit;
+}
+
+
+.principal{
+    max-width: 72rem;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.principal__listado{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+    gap: 1.5rem;
+}
+
+.cabana{
+    padding: 1rem;
+    border: 1px solid #cccccc;
+}
+
+.cabana__precio{
+    font-weight: bold;
+}
+
+.formulario__campo{
+    margin-bottom: 1rem;
+}
+
+.formulario__campo label{
+    display: block;
+}
+
+
+
+.pie{
+    padding: 1.5rem 2rem;
+    text-align: center;
+}
+
+.pie__texto{
+    margin: 0;
+}
