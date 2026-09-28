@@ -1,0 +1,173 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* IMPORTAR FUENTE */
+@font-face {
+  font-family: "LibreBaskerville";
+  src: url(./fuentes/LibreBaskerville-VariableFont_wght.ttf);
+}
+
+/* SELECTOR DE TIPO */ 
+html {
+    font-family: "LibreBaskerville";
+}
+
+body {
+    background-color: #e6e8e9; 
+}
+
+/* Encabezado inmovilizado (Sticky) */
+header {
+    background-color: #ffebab;
+    position: sticky;
+    top: 0;
+    z-index: 1000; 
+}
+
+a {
+    color: #16303F;
+    text-decoration: none;
+}
+
+/* SELECTORES DE CLASE */
+
+/* Grilla aplicada al layout general */
+.layout-grilla {
+    display: grid;
+    grid-template-rows: auto 1fr auto; 
+    min-height: 100vh;
+}
+
+/* ENCABEZADOS PRINCIPALES */
+.encabezado-principal {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #ffebab;
+    padding: 5px;
+}
+
+.encabezado-principal a img {
+    width: 400px;
+}
+
+.encabezado-principal .vinculos a {
+    color: #16303F;
+}
+
+/* CONTENIDOS PRINCIPALES */
+.contenido-principal {
+    max-width: 760px;
+    margin: 2.5rem auto;
+    padding: 2.5rem 2rem;
+    background-color: #FFFFFF;
+    border-radius: 4px;
+}
+
+.contenido-principal img {
+    width: 650px;     
+}
+
+.contenido-principal .contenedor-form {
+    padding: 20px 20%;
+}
+
+.contenido-principal .contenedor-form form {
+    display: flex;
+    flex-direction: column;
+}
+
+.contenido-principal .contenedor-form form label {
+    margin-top: 1.0rem;
+    margin-bottom: 0.25rem;
+    font-weight: 700;
+    color: #16303F;
+}
+ 
+.contenido-principal .contenedor-form form input,
+.contenido-principal .contenedor-form form select,
+.contenido-principal .contenedor-form form textarea {
+    padding: 0.625rem 0.75rem;
+    background-color: #FFFFFF;
+    border: 1px solid #C8D0D5;
+    border-radius: 4px;
+    width: 100%;
+}
+ 
+.contenido-principal .contenedor-form form textarea {
+    min-height: 140px;
+    resize: vertical;
+}
+ 
+.contenido-principal .contenedor-form form input:focus,
+.contenido-principal .contenedor-form form select:focus,
+.contenido-principal .contenedor-form form textarea:focus {
+    border-color: #C9A227;
+    outline: 2px solid #C9A227;
+}
+ 
+.contenido-principal .contenedor-form button {
+    display: block;
+    margin-top: 1.5rem;
+    padding: 0.75rem 2.25rem;
+    background-color: #16303F;
+    color: #D9B84A;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+ 
+.contenido-principal .contenedor-form button:hover {
+    background-color: #0E212C;
+    color: #FFFFFF;
+}
+
+.contenido-principal iframe {
+    width: 100%;
+    height: 350px;
+    border-radius: 4px;
+}
+
+/* PIE PRINCIPAL */
+.pie-principal {
+    background-color: #ffebab;
+}
+
+/* Vínculo flotante de mensajería (WhatsApp Chiquito) */
+.vinculo-flotante {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    padding: 8px; 
+    background-color: #25d366;
+    color: #ffffff;
+    border-radius: 50%; 
+    box-shadow: 0px 2px 4px rgba(0,0,0,0.2);
+    z-index: 2000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 45px; 
+    height: 45px; 
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.vinculo-flotante:hover {
+    background-color: #128C7E;
+    transform: scale(1.05);
+}
+
+.vinculo-flotante .img-whatsapp {
+    width: 60%; 
+    height: auto; 
+    display: block;
+    margin: 0 auto;
+}
