@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Retiro Sustentable - Reservas</title>
+    <link rel="stylesheet" href="./recursos/css/index.css">
+</head>
+
+<body>
+    <header class="encabezado">
+        <a class="encabezado__logo" href="index.html">
+            <img src="./recursos/imagenes/logo-rs.svg" alt="Retiro Sustentable - ir al inicio">
+        </a>
+        <nav class="encabezado__menu">
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="reservas.html">Reservas</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="principal">
+        <h1>Reservas</h1>
+        <h2>Contactanos</h2>
+
+        <form class="formulario" action="#" method="post">
+
+            <div class="formulario__campo">
+                <label for="nombre">Nombre completo</label>
+                <input type="text" id="nombre" name="nombre" required>
+            </div>
+
+            <div class="formulario__campo">
+                <label for="telefono">Teléfono</label>
+                <input type="tel" id="telefono" name="telefono" required>
+            </div>
+
+            <div class="formulario__campo">
+                <label for="email">Correo electrónico</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+
+            <div class="formulario__campo">
+                <label for="fecha-desde">Fecha desde</label>
+                <input type="date" id="fecha-desde" name="fechaDesde" required>
+            </div>
+
+            <div class="formulario__campo">
+                <label for="fecha-hasta">Fecha hasta</label>
+                <input type="date" id="fecha-hasta" name="fechaHasta" required>
+            </div>
+
+            <div class="formulario__campo">
+                <label for="comentario">Comentario</label>
+                <textarea name="comentario" id="comentario" rows="4"></textarea>
+            </div>
+
+            <button type="submit">Enviar</button>
+        </form>
+    </main>
+
+    <footer class="pie">
+        <p class="pie__texto">&copy; 2026 Retiro Sustentable. Todos los derechos reservados.</p>
+    </footer>
+
+</body>
+
+</html>

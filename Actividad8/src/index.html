@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Retiro Sustentable - Catálogo</title>
+    <link rel="stylesheet" href="./recursos/css/index.css">
+    <!--
+    MPA + SPA: index.html (catálogo) es MPA: contenido casi estático que conviene indexar y que
+    cargue rápido; cada enlace es una navegación real a otro documento.
+    reservas.html es SPA (mejora progresiva): con JavaScript se puede enviar el formulario con
+    fetch() y mostrar la confirmación sin recargar la página.
+    CSR/SSR: MPA suele ir con SSR (el HTML llega armado desde el servidor: mejor SEO y primer
+    render). SPA suele ir con CSR (el navegador dibuja la interfaz con JavaScript: más fluido,
+    pero el primer render tarda más y el SEO se complica). Por eso lo limitamos a reservas.
+    -->
+</head>
+
+<body>
+    <!-- header en vez de div: es el encabezado del sitio y los lectores de pantalla lo anuncian -->
+    <header class="encabezado">
+        <!-- Logo como enlace al inicio. El alt es importante: lo leen los lectores de pantalla,
+             se muestra si la imagen no carga y ayuda al SEO -->
+        <a class="encabezado__logo" href="index.html">
+            <img src="./recursos/imagenes/logo-rs.svg" alt="Retiro Sustentable - ir al inicio">
+        </a>
+        <!-- nav + ul + li: menú principal como lista de enlaces -->
+        <nav class="encabezado__menu">
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="reservas.html">Reservas</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="principal">
+        <h1>Catálogo de Cabañas</h1>
+        <h2>Cabañas para alquiler</h2>
+        <p>Bienvenido a nuestro catálogo de cabañas. Explora nuestras opciones y encuentra la que mejor se adapte a tus
+            necesidades.</p>
+
+        <section class="principal__listado">
+            <article class="cabana">
+                <h3>Cabaña 1</h3>
+                <img src="./recursos/imagenes/modelo1.webp" alt="Cabaña de madera sobre pilotes al atardecer, con luces cálidas y la montaña detrás">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                <p class="cabana__precio">$45.000 por día</p>
+                <a class="cabana__enlace" href="reservas.html">Reservar</a>
+            </article>
+            <article class="cabana">
+                <h3>Cabaña 2</h3>
+                <img src="./recursos/imagenes/modelo2.webp" alt="Cabaña de madera con galería y techo de chapa, rodeada de sierras y cielo azul">
+                <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
+                <p class="cabana__precio">$48.000 por día</p>
+                <a class="cabana__enlace" href="reservas.html">Reservar</a>
+            </article>
+            <article class="cabana">
+                <h3>Cabaña 3</h3>
+                <img src="./recursos/imagenes/modelo3.webp" alt="Cabaña de dos plantas con balcón y chimenea metálica, entre pinos">
+                <p>Duis aute irure dolor in reprehenderit in voluptate velit.</p>
+                <p class="cabana__precio">$60.000 por día</p>
+                <a class="cabana__enlace" href="reservas.html">Reservar</a>
+            </article>
+            <article class="cabana">
+                <h3>Cabaña 4</h3>
+                <img src="./recursos/imagenes/modelo4.webp" alt="Cabaña de dos plantas con luces en la fachada al anochecer y sierras al fondo">
+                <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa.</p>
+                <p class="cabana__precio">$62.000 por día</p>
+                <a class="cabana__enlace" href="reservas.html">Reservar</a>
+            </article>
+        </section>
+    </main>
+
+    
+    <footer class="pie">
+        <p class="pie__texto">&copy; 2026 Retiro Sustentable. Todos los derechos reservados.</p>
+    </footer>
+
+</body>
+
+</html>
