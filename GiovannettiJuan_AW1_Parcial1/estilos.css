@@ -1,9 +1,4 @@
-/* ==========================================================================
-   ESTILOS.CSS - PARCIAL 1: APLICACIONES WEB 1
-   Tema 1: Arquitectura semántica HTML5 y modelo de caja CSS
-   ========================================================================== */
 
-/* 1. VARIABLES GLOBALES DE DISEÑO */
 :root {
   --color-fondo: #f8fafc;
   --color-superficie: #ffffff;
@@ -17,9 +12,7 @@
   --fuente-principal: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
 }
 
-/* 2. RESETEO GLOBAL DEL MODELO DE CAJA
-   box-sizing no es heredable de forma nativa. Declararlo en html con inherit
-   permite aislar componentes de terceros si fuera necesario. */
+
 html {
   box-sizing: border-box;
 }
@@ -30,7 +23,7 @@ html {
   box-sizing: inherit;
 }
 
-/* 3. ESTILOS BASE Y FLUJO NORMAL */
+
 body {
   margin: 0;
   font-family: var(--fuente-principal);
@@ -39,7 +32,7 @@ body {
   line-height: 1.6;
 }
 
-/* Enlace de salto accesible */
+
 .skip-link {
   position: absolute;
   top: -100px;
@@ -57,7 +50,7 @@ body {
   top: 1rem;
 }
 
-/* Encabezado */
+
 .header-sitio {
   background-color: var(--color-primario);
   color: #ffffff;
@@ -75,7 +68,7 @@ body {
   font-size: 1rem;
 }
 
-/* Menú de navegación */
+
 .nav-sitio__lista {
   list-style: none;
   padding: 0;
@@ -101,7 +94,7 @@ body {
   border-color: var(--color-acento);
 }
 
-/* Contenedor central */
+
 .contenedor-principal {
   max-width: 58rem;
   margin: 0 auto;
@@ -123,7 +116,7 @@ body {
   font-size: 1.4rem;
 }
 
-/* Glosario semántico */
+
 .glosario-semantico dt {
   font-family: monospace;
   font-weight: 700;
@@ -148,7 +141,7 @@ body {
   font-size: 1rem;
 }
 
-/* 4. DEMOSTRACIÓN VISUAL: MODELO DE CAJA */
+
 .panel-comparativa {
   margin: 1.5rem 0;
   padding: 0;
@@ -170,7 +163,7 @@ body {
   padding: 20px;
   border: 5px solid var(--color-primario);
   
-  /* Gradiente para diferenciar visualmente el área de contenido del padding */
+  
   background: 
     linear-gradient(var(--color-caja-contenido), var(--color-caja-contenido)) content-box,
     var(--color-caja-padding);
@@ -187,17 +180,17 @@ body {
   color: var(--color-texto-muted);
 }
 
-/* Comportamiento por defecto del navegador */
+
 .caja-muestra--content-box {
   box-sizing: content-box;
 }
 
-/* Comportamiento alternativo moderno */
+
 .caja-muestra--border-box {
   box-sizing: border-box;
 }
 
-/* 5. TABLA DE MEDICIONES */
+
 .tabla-metricas {
   width: 100%;
   border-collapse: collapse;
@@ -223,7 +216,7 @@ body {
   background-color: #f1f5f9;
 }
 
-/* 6. PRUEBA DE HERENCIA */
+
 .contenedor-padre {
   width: 200px;
   padding: 20px;
@@ -253,7 +246,7 @@ body {
   font-size: 0.8rem;
 }
 
-/* 7. FOOTER */
+
 .footer-sitio {
   background-color: var(--color-primario);
   color: #ffffff;
