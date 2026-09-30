@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <!-- Metadatos obligatorios y configuración de viewport responsivo -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Investigación práctica sobre arquitectura semántica HTML5 y modelo de caja CSS para Aplicaciones Web 1.">
+  <title>Parcial 1 | Arquitectura Semántica y Modelo de Caja</title>
+  
+  <!-- Vinculación de la hoja de estilos externa -->
+  <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+
+  <!-- Enlace de accesibilidad para saltar directamente al contenido (WCAG 2.4.1) -->
+  <a class="skip-link" href="#contenido-principal">Saltar al contenido principal</a>
+
+  <!-- Encabezado principal del sitio (Landmark: banner) -->
+  <header class="header-sitio">
+    <h1 class="header-sitio__titulo">Arquitectura Semántica HTML5 y Modelo de Caja CSS</h1>
+    <p class="header-sitio__subtitulo">Aplicaciones Web 1 &middot; Parcial N° 1 (M1)</p>
+
+    <!-- Navegación estructural (Landmark: navigation) -->
+    <nav class="nav-sitio" aria-label="Menú principal">
+      <ul class="nav-sitio__lista">
+        <li><a class="nav-sitio__enlace" href="#seccion-semantica">1. Semántica HTML5</a></li>
+        <li><a class="nav-sitio__enlace" href="#seccion-caja">2. Modelo de Caja</a></li>
+        <li><a class="nav-sitio__enlace" href="#seccion-herencia">3. Prueba de Herencia</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Bloque central único del documento (Landmark: main) -->
+  <main id="contenido-principal" class="contenedor-principal">
+
+    <!-- SECCIÓN 1: ARQUITECTURA SEMÁNTICA -->
+    <section id="seccion-semantica" class="seccion-bloque" aria-labelledby="titulo-semantica">
+      <h2 id="titulo-semantica" class="seccion-bloque__titulo">1. Jerarquía Semántica y Accesibilidad</h2>
+      
+      <article class="tarjeta-info">
+        <h3 class="tarjeta-info__titulo">Contenedores Estructurales vs. Bloques Genéricos</h3>
+        <p>
+          El uso de etiquetas semánticas describe el rol estructural del contenido en el DOM. 
+          A diferencia de un <code>&lt;div&gt;</code> genérico, estos elementos exponen <em>landmarks</em> nativos 
+          al árbol de accesibilidad (AOM), mejorando la navegación asistiva (lectores de pantalla) y el posicionamiento en motores de búsqueda (SEO).
+        </p>
+
+        <dl class="glosario-semantico">
+          <dt>&lt;header&gt;</dt>
+          <dd>Punto de entrada superior, branding y navegación inicial.</dd>
+
+          <dt>&lt;nav&gt;</dt>
+          <dd>Agrupa conjuntos de enlaces principales del sistema.</dd>
+
+          <dt>&lt;main&gt;</dt>
+          <dd>Contenido nuclear único por vista; excluye barras repetitivas.</dd>
+
+          <dt>&lt;section&gt;</dt>
+          <dd>Segmento temático diferenciado con su propio encabezado jerárquico.</dd>
+
+          <dt>&lt;article&gt;</dt>
+          <dd>Unidad de contenido autocontenida y potencialmente redistribuible.</dd>
+
+          <dt>&lt;footer&gt;</dt>
+          <dd>Pie con información de autoría, enlaces legales y fuentes.</dd>
+        </dl>
+      </article>
+
+      <aside class="nota-lateral">
+        <h3 class="nota-lateral__titulo">Principio de Cero Divs Genéricos</h3>
+        <p>
+          Todo el layout está resuelto mediante contenedores semánticos con significado semántico intrínseco.
+        </p>
+      </aside>
+    </section>
+
+    <!-- SECCIÓN 2: DEMOSTRACIÓN MODELO DE CAJA -->
+    <section id="seccion-caja" class="seccion-bloque" aria-labelledby="titulo-caja">
+      <h2 id="titulo-caja" class="seccion-bloque__titulo">2. Modelo de Caja: Comportamiento por Defecto vs. Modificado</h2>
+      <p>
+        Ambos componentes comparten idénticas declaraciones: <code>width: 200px; height: 120px; padding: 20px; border: 5px solid;</code>.
+        La variación radica únicamente en la propiedad <code>box-sizing</code>.
+      </p>
+
+      <figure class="panel-comparativa">
+        <!-- Caso estándar content-box -->
+        <article class="caja-muestra caja-muestra--content-box">
+          <h3 class="caja-muestra__nombre">content-box</h3>
+          <p class="caja-muestra__estado">Por defecto (250 &times; 170 px)</p>
+        </article>
+
+        <!-- Caso alternativo border-box -->
+        <article class="caja-muestra caja-muestra--border-box">
+          <h3 class="caja-muestra__nombre">border-box</h3>
+          <p class="caja-muestra__estado">Alternativo (200 &times; 120 px)</p>
+        </article>
+
+        <figcaption class="panel-comparativa__epigrafe">
+          El cálculo estándar expande la caja al sumarse el padding y el border; con border-box, el ancho declarado es el límite final del elemento en el viewport.
+        </figcaption>
+      </figure>
+
+      <table class="tabla-metricas">
+        <caption class="tabla-metricas__titulo">Valores computados en píxeles</caption>
+        <thead>
+          <tr>
+            <th scope="col">Propiedad / Métrica</th>
+            <th scope="col">content-box (Estándar)</th>
+            <th scope="col">border-box (Alternativo)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">Dimensiones declaradas (W &times; H)</th>
+            <td>200 &times; 120 px</td>
+            <td>200 &times; 120 px</td>
+          </tr>
+          <tr>
+            <th scope="row">Padding + Border total acumulado</th>
+            <td>+50 px por eje</td>
+            <td>+50 px por eje</td>
+          </tr>
+          <tr>
+            <th scope="row">Área de contenido neta</th>
+            <td>200 &times; 120 px</td>
+            <td>150 &times; 70 px</td>
+          </tr>
+          <tr>
+            <th scope="row">Espacio final renderizado en pantalla</th>
+            <td><strong>250 &times; 170 px</strong></td>
+            <td><strong>200 &times; 120 px</strong></td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- SECCIÓN 3: COMPORTAMIENTO DE HERENCIA -->
+    <section id="seccion-herencia" class="seccion-bloque" aria-labelledby="titulo-herencia">
+      <h2 id="titulo-herencia" class="seccion-bloque__titulo">3. Demostración de Herencia y Desbordamiento</h2>
+      <p>
+        Dado que <code>box-sizing</code> no es heredable por especificación W3C, el reseteo global mediante 
+        <code>inherit</code> fuerza a los elementos descendientes con <code>width: 100%</code> a adaptarse a la caja contenedora:
+      </p>
+
+      <figure class="panel-comparativa">
+        <article class="contenedor-padre contenedor-padre--content">
+          <h3 class="contenedor-padre__titulo">Padre: content-box</h3>
+          <p class="elemento-hijo">Hijo al 100%: produce desbordamiento horizontal.</p>
+        </article>
+
+        <article class="contenedor-padre contenedor-padre--border">
+          <h3 class="contenedor-padre__titulo">Padre: border-box</h3>
+          <p class="elemento-hijo">Hijo al 100%: se ajusta exactamente al límite del padre.</p>
+        </article>
+
+        <figcaption class="panel-comparativa__epigrafe">
+          El elemento hijo hereda el modelo del padre gracias a la regla <code>*, *::before, *::after { box-sizing: inherit; }</code>.
+        </figcaption>
+      </figure>
+    </section>
+
+  </main>
+
+  <!-- Pie de página y fuentes de investigación (Landmark: contentinfo) -->
+  <footer class="footer-sitio">
+    <h2 class="footer-sitio__titulo">Fuentes Bibliográficas de Consulta</h2>
+    <ul class="footer-sitio__fuentes">
+      <li>MDN Web Docs &mdash; Referencia de box-sizing y modelo de caja CSS.</li>
+      <li>MDN Web Docs &mdash; Semántica y estructura en HTML5.</li>
+      <li>W3C &mdash; Pautas de Accesibilidad para el Contenido Web (WCAG 2.2).</li>
+      <li>CSS-Tricks &mdash; Box Sizing y técnicas de maquetación en flujo normal.</li>
+    </ul>
+    <p class="footer-sitio__creditos">Desarrollado para Aplicaciones Web 1 &middot; Parcial N° 1</p>
+  </footer>
+
+</body>
+</html>
