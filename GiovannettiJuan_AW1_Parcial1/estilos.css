@@ -1,279 +1,214 @@
 
-:root {
-  --color-fondo: #f8fafc;
-  --color-superficie: #ffffff;
-  --color-texto: #0f172a;
-  --color-texto-muted: #475569;
-  --color-primario: #1e293b;
-  --color-acento: #2563eb;
-  --color-borde: #cbd5e1;
-  --color-caja-contenido: #bfdbfe;
-  --color-caja-padding: #fef08a;
-  --fuente-principal: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
-}
-
-
+/* ==========================================================
+   RESETEO GLOBAL DEL MODELO DE CAJA
+   box-sizing NO se hereda por defecto, por eso se define
+   border-box una vez en <html> y todos los demás elementos
+   lo toman con "inherit". Así, si un contenedor cambia su
+   modelo de caja, sus hijos lo heredan (ver "Herencia").
+   ========================================================== */
 html {
-  box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 *,
 *::before,
 *::after {
-  box-sizing: inherit;
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
 }
 
+html {
+    height: 100%;
+}
 
 body {
-  margin: 0;
-  font-family: var(--fuente-principal);
-  color: var(--color-texto);
-  background-color: var(--color-fondo);
-  line-height: 1.6;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    min-height: 100vh;
+    font-family: Verdana, Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    color: #2e2e2e;
+    background-color: #e6ffe3;
 }
 
-
-.skip-link {
-  position: absolute;
-  top: -100px;
-  left: 1rem;
-  background-color: var(--color-acento);
-  color: #ffffff;
-  padding: 0.5rem 1rem;
-  text-decoration: none;
-  border-radius: 4px;
-  font-weight: 600;
-  z-index: 100;
+a {
+    text-decoration: none;
+    color: #0f3d00;
 }
 
-.skip-link:focus {
-  top: 1rem;
+h1 {
+    font-size: 1.4rem;
+    color: #0f3d00;
 }
 
-
-.header-sitio {
-  background-color: var(--color-primario);
-  color: #ffffff;
-  padding: 2rem 1.5rem;
+h2 {
+    font-size: 1.2rem;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    color: #0f3d00;
 }
 
-.header-sitio__titulo {
-  margin: 0;
-  font-size: 1.75rem;
+h3 {
+    font-size: 1rem;
+    margin-bottom: 5px;
 }
 
-.header-sitio__subtitulo {
-  margin: 0.5rem 0 1.5rem;
-  color: #94a3b8;
-  font-size: 1rem;
+p {
+    margin-bottom: 12px;
 }
 
-
-.nav-sitio__lista {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.75rem;
+/* Encabezado */
+.encabezado-principal {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fdfbf7;
+    padding: 15px 30px;
+    border-bottom: 1px solid #c2dec0;
 }
 
-.nav-sitio__enlace {
-  display: inline-block;
-  padding: 0.4rem 0.8rem;
-  color: #ffffff;
-  text-decoration: none;
-  border: 1px solid #475569;
-  border-radius: 6px;
-  font-size: 0.9rem;
-  transition: background-color 0.2s, border-color 0.2s;
+.encabezado-principal .vinculos a {
+    margin-left: 15px;
+    font-weight: bold;
 }
 
-.nav-sitio__enlace:hover {
-  background-color: var(--color-acento);
-  border-color: var(--color-acento);
+.encabezado-principal .vinculos a:hover {
+    text-decoration: underline;
 }
 
-
-.contenedor-principal {
-  max-width: 58rem;
-  margin: 0 auto;
-  padding: 2rem 1.5rem;
+/* Contenido Principal */
+.contenido-principal {
+    max-width: 800px;
+    width: 90%;
+    margin: 30px auto;
+    padding: 25px;
+    background-color: #ffffff;
+    border-radius: 4px;
 }
 
-.seccion-bloque {
-  margin-bottom: 3rem;
-  background-color: var(--color-superficie);
-  padding: 1.75rem;
-  border: 1px solid var(--color-borde);
-  border-radius: 8px;
+.contenido-principal ul {
+    padding-left: 25px;
+    margin-bottom: 20px;
 }
 
-.seccion-bloque__titulo {
-  margin-top: 0;
-  border-bottom: 2px solid var(--color-borde);
-  padding-bottom: 0.5rem;
-  font-size: 1.4rem;
+.contenido-principal ul li {
+    margin-bottom: 6px;
 }
 
-
-.glosario-semantico dt {
-  font-family: monospace;
-  font-weight: 700;
-  color: var(--color-acento);
-  margin-top: 1rem;
+/* ==========================================================
+   DEMOSTRACIÓN DE CAJAS
+   Las dos cajas tienen EXACTAMENTE las mismas medidas.
+   Lo único que cambia es box-sizing.
+   ========================================================== */
+.cajas {
+    display: flex;
+    gap: 30px;
+    margin: 20px 0;
 }
 
-.glosario-semantico dd {
-  margin-left: 1rem;
-  color: var(--color-texto-muted);
+.caja {
+    width: 200px;
+    height: 120px;
+    padding: 20px;
+    border: 5px solid #0f3d00;
+    background-color: #fceea7;
 }
 
-.nota-lateral {
-  margin-top: 1.5rem;
-  padding: 1rem;
-  background-color: #f1f5f9;
-  border-left: 4px solid var(--color-acento);
+.caja p {
+    margin: 0;
+    font-size: 0.9rem;
 }
 
-.nota-lateral__titulo {
-  margin-top: 0;
-  font-size: 1rem;
+/* Comportamiento por defecto: width y height miden solo el contenido.
+   Total = 200 + 20 + 20 + 5 + 5 = 250px de ancho
+           120 + 20 + 20 + 5 + 5 = 170px de alto */
+.caja-content {
+    box-sizing: content-box;
 }
 
-
-.panel-comparativa {
-  margin: 1.5rem 0;
-  padding: 0;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 2rem;
+/* Comportamiento modificado: width y height incluyen padding y border.
+   Total = 200px de ancho x 120px de alto
+   Área de contenido = 150px x 70px */
+.caja-border {
+    box-sizing: border-box;
 }
 
-.panel-comparativa__epigrafe {
-  flex-basis: 100%;
-  font-size: 0.9rem;
-  color: var(--color-texto-muted);
-  font-style: italic;
+/* ==========================================================
+   DEMOSTRACIÓN DE HERENCIA
+   Solo se cambia el box-sizing del padre. El hijo no declara
+   nada: lo recibe por "box-sizing: inherit" del reseteo global.
+   ========================================================== */
+.padre {
+    width: 200px;
+    padding: 15px;
+    border: 2px dashed #0f3d00;
+    background-color: #fdfbf7;
 }
 
-.caja-muestra {
-  width: 200px;
-  height: 120px;
-  padding: 20px;
-  border: 5px solid var(--color-primario);
-  
-  
-  background: 
-    linear-gradient(var(--color-caja-contenido), var(--color-caja-contenido)) content-box,
-    var(--color-caja-padding);
+/* El hijo hereda content-box: su 100% (200px) y además se le suman
+   padding y border (10 + 10 + 2 + 2), así que mide 224px y se desborda */
+.padre-content {
+    box-sizing: content-box;
 }
 
-.caja-muestra__nombre {
-  margin: 0;
-  font-size: 1rem;
+/* El hijo hereda border-box: su 100% ya incluye padding y border,
+   por eso entra justo en el espacio disponible del padre */
+.padre-border {
+    box-sizing: border-box;
 }
 
-.caja-muestra__estado {
-  margin: 0.25rem 0 0;
-  font-size: 0.8rem;
-  color: var(--color-texto-muted);
+.hijo {
+    width: 100%;
+    padding: 10px;
+    border: 2px solid #b32d2e;
+    background-color: #c9e4c5;
+    margin: 0;
+    font-size: 0.85rem;
 }
 
-
-.caja-muestra--content-box {
-  box-sizing: content-box;
+/* Tabla */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
 }
 
-
-.caja-muestra--border-box {
-  box-sizing: border-box;
+th,
+td {
+    border: 1px solid #b0d4ad;
+    padding: 8px 12px;
+    text-align: left;
 }
 
-
-.tabla-metricas {
-  width: 100%;
-  border-collapse: collapse;
-  margin-top: 1.5rem;
-  font-size: 0.95rem;
+thead th {
+    background-color: #e6ffe3;
+    color: #0f3d00;
 }
 
-.tabla-metricas__titulo {
-  caption-side: top;
-  text-align: left;
-  font-weight: bold;
-  margin-bottom: 0.5rem;
+/* Pie de página */
+.pie-principal {
+    background-color: #b0d4ad;
+    padding: 20px;
+    text-align: center;
 }
 
-.tabla-metricas th,
-.tabla-metricas td {
-  padding: 0.6rem 0.8rem;
-  border: 1px solid var(--color-borde);
-  text-align: left;
+.pie-principal ul {
+    list-style: none;
+    margin-bottom: 10px;
 }
 
-.tabla-metricas thead th {
-  background-color: #f1f5f9;
+.pie-principal ul li {
+    margin-bottom: 5px;
 }
 
-
-.contenedor-padre {
-  width: 200px;
-  padding: 20px;
-  border: 2px dashed var(--color-primario);
-  background-color: var(--color-caja-padding);
+.pie-principal a {
+    color: #0f3d00;
+    font-weight: bold;
 }
 
-.contenedor-padre__titulo {
-  margin-top: 0;
-  font-size: 0.95rem;
-}
-
-.contenedor-padre--content {
-  box-sizing: content-box;
-}
-
-.contenedor-padre--border {
-  box-sizing: border-box;
-}
-
-.elemento-hijo {
-  width: 100%;
-  margin: 0;
-  padding: 15px;
-  border: 4px solid var(--color-acento);
-  background-color: var(--color-caja-contenido);
-  font-size: 0.8rem;
-}
-
-
-.footer-sitio {
-  background-color: var(--color-primario);
-  color: #ffffff;
-  padding: 2rem 1.5rem;
-  font-size: 0.9rem;
-}
-
-.footer-sitio__titulo {
-  margin-top: 0;
-  font-size: 1.1rem;
-}
-
-.footer-sitio__fuentes {
-  padding-left: 1.25rem;
-  margin: 0.5rem 0 1.5rem;
-  color: #cbd5e1;
-}
-
-.footer-sitio__creditos {
-  margin: 0;
-  color: #94a3b8;
-  font-size: 0.85rem;
-}
-
-code {
-  background-color: #e2e8f0;
-  padding: 0.15em 0.35em;
-  border-radius: 4px;
-  font-size: 0.9em;
+.pie-principal a:hover {
+    text-decoration: underline;
 }
