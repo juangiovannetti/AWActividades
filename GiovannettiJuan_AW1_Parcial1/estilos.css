@@ -1,11 +1,5 @@
 
-/* ==========================================================
-   RESETEO GLOBAL DEL MODELO DE CAJA
-   box-sizing NO se hereda por defecto, por eso se define
-   border-box una vez en <html> y todos los demás elementos
-   lo toman con "inherit". Así, si un contenedor cambia su
-   modelo de caja, sus hijos lo heredan (ver "Herencia").
-   ========================================================== */
+
 html {
     box-sizing: border-box;
 }
